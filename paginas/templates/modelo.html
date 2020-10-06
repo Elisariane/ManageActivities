@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    {% block scriptHead %}
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link
+      type="text/css"
+      href="{% static 'css/argon-design-system.min.css'%}"
+      rel="stylesheet"
+    />
+    {% endblock %}
+
+    <title>ManageActivities</title>
+  </head>
+  <body>
+    {% block menu %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-default">
+      <div class="container">
+        <a class="navbar-brand" href="#">Default Color</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-default"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-default">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="/">
+                  <img src="{% static 'img/brand/white.png' %}" />
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar-default"
+                  aria-controls="navbar-default"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary">Entrar</button>
+        </div>
+      </div>
+    </nav>
+
+    {% endblock %} {% block conteudo %}
+    <div class="container"></div>
+    {% endblock %} {% block footer %}
+    <div id="footer" class="container-fluid py-4">
+      <div class="credits">
+        Feito com 💜e ☕️ por
+        <a target="_blank" href="https://github.com/Elisariane"> Elisariane </a>
+      </div>
+    </div>
+    {% endblock %} {% block scriptJs %}
+    <script src="{% static 'js/core/jquery.min.js' %}"></script>
+    <script src="{% static 'js/core/popper.min.js' %}"></script>
+    <script src="{% static 'js/core/bootstrap.min.js' %} "></script>
+
+    <script src="{% static 'js/argon-design-system.min.js' %} "></script>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link
+      type="text/css"
+      href="{% static 'css/argon-design-system.min.css'%}"
+      rel="stylesheet"
+    />
+
+    <title>ManageActivities</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-transparent bg-default">
+      <div class="container">
+        <a class="navbar-brand" href="/">ManageActivities</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-default"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-default">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="/">
+                  <img src="{% static 'img/brand/white.png' %}" />
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar-default"
+                  aria-controls="navbar-default"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item d-none d-lg-block ml-lg-4">
+          <a href={% url 'login' %} target="_blank" class="btn btn-neutral" role="button" aria-disabled="false">
+
+            <span class="nav-link-inner--text">Entrar</span>
+          </a>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="../index.html">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="../../../index.html">
+                  <img src="{% static 'img/brand/blue.png' %}">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="section section-hero section-shaped">
+        <div class="shape shape-style-1 shape-primary">
+          <span class="span-150"></span>
+          <span class="span-50"></span>
+          <span class="span-50"></span>
+          <span class="span-75"></span>
+          <span class="span-100"></span>
+          <span class="span-75"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+        </div>
+        <div class="page-header">
+          <div class="container shape-container d-flex align-items-center py-lg">
+            <div class="col px-0">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                  <img src="{% static 'img/undraw_Process_re_gws7.svg' %}" style="width: 250px; margin: 0px; padding: 0px;">
+                  <p class="lead text-white">ManageActivities é o seu gerenciador de atividades! <br>
+                    Sua sua vida acadêmica mais fácil.</p>
+                  <div class="btn-wrapper mt-5">
+                    <a href={% url 'register' %} class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                      <span class="btn-inner--text">Registrar-se</span>
+                    </a>
+                    <a href={% url 'login' %} class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" >
+                      <span class="btn-inner--text"><span class="text-warning">Entrar</span>
+                    </a>
+                  </div>
+                  <div class="mt-5">
+                    <div class="text-light">
+                      Feito com 💜e ☕️ por
+                      <a class="text-dark" target="_blank" href="https://github.com/Elisariane"> Elisariane </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="separator separator-bottom separator-skew zindex-100">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="section features-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center">
+            <span class="badge badge-primary badge-pill mb-3">O que é?</span>
+            <h3 class="display-3">Conheça o ManageActivities</h3>
+            <p class="lead">Mantenha todas suas atividades escolares/universitárias em um só lugar.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="info">
+              <div class="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle">
+                <i class="fa fa-tasks" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-primary">Organize-se</h6>
+              <p class="description opacity-8">Foque na sua vida acadêmica. Organize todas suas atividades!</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info">
+              <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle">
+                <i  class="fa fa-bell" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-success">Nós te notificamos</h6>
+              <p class="description opacity-8">Você esquece as datas de tudo? ManageActivities te ajuda a lembrar das atividades que devem ser entregues.</p>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info">
+              <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle">
+                <i class="fa fa-chart-line" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-warning">Acompanhe suas métricas</h6>
+              <p class="description opacity-8">Compare suas notas e as frequências de entrega e veja sua evolução.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+      <div class="col-md-8 mx-auto text-center">
+        <h3 class="display-3 m-4">Detalhes Técnicos</h3>
+        <p class="lead">O software tem por objetivo registrar as atividades universitárias afim de obter maior controle. 
+        Registrando as tarefas, definindo prioridades, adicionando lembretes para notificar a entrega.
+        </p>
+      </div>
+
+     <div class="row">
+       
+      <div class="col-6">
+
+        <div class="card">
+          <h5 class="card-header bg-primary text-secondary text-center">Diagrama de Classe</h5> 
+          <img src="{% static 'img/DiagramadeClasse.png' %}" style="width: 500px;" class="card-img-top"  alt="Diagrama de Caso de Uso">
+          <div class="card-body bg-secondary" > 
+            <h5 class="card-title text-center">Diagrama de Classe</h5>
+            <p class="card-text text-center">
+              O diagrama de caso de uso descreve a funcionalidade proposta
+              para um novo sistema que será projetado,
+              é uma excelente ferramenta para o levantamento dos
+              requisitos funcionais do sistema.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+
+        <div class="card" >
+          <h5 class="card-header bg-warning text-secondary text-center">Diagrama de Caso de Uso</h5>
+          <img src="{% static 'img/DiagramaCasodeUso.png' %}" class="card-img-top" style="width: 450px; margin-left: 20px; margin-top: 15px; margin-bottom: 15px;" alt="Diagrama de Caso de Uso">
+          <div class="card-body bg-secondary">
+            <h5 class="card-title text-center">Diagrama de Caso de Uso</h5>
+            <p class="card-text text-center">
+              O diagrama de caso de uso descreve a funcionalidade proposta
+              para um novo sistema que será projetado, é uma
+              excelente ferramenta para o levantamento dos
+              requisitos funcionais do sistema.
+            </p>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    
+    <footer class="footer" style="margin-top: 40px;">
+      <div class="container">
+      
+        <hr>
+        <div class="row align-items-center justify-content-md-between  m-4">
+          <div class="col-md-6">
+            <div class="copyright">
+              &copy; 2020 <a href="https://github.com/Elisariane" target="_blank">Elisariane</a>.
+            </div>
+          </div>
+          <div class="col-md-6 align-items-center" >
+            
+            <span>Feito com 💜e ☕️ por</span>
+            <a class="text-dark" target="_blank" href="https://github.com/Elisariane"> Elisariane </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/core/jquery.min.js' %}"></script>
+    <script src="{% static 'js/core/popper.min.js' %}"></script>
+    <script src="{% static 'js/core/bootstrap.min.js' %} "></script>
+
+    <script src="{% static 'js/argon-design-system.min.js' %} "></script>
+  </body>
+</html>
