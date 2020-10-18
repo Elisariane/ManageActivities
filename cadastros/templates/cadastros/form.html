@@ -1,0 +1,21 @@
+{% extends 'modelo.html' %} {% load static %} {% block conteudo %}
+
+<div class="container-fluid">
+    <div class="card col-lg-12 text-center">
+      <div class="card-body">
+          <h3>Cadastro</h3>
+        <p class="card-text text-muted">
+          Cadastre aqui as disciplinas, blocos ou atividades. Não esqueça de
+          preeencher tudo ;)
+        </p>
+        <form action="" method="POST" class="form m-4">
+          {% csrf_token %} {{ form.as_p }}
+
+          <button type="submit" class="btn btn-success m-2">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

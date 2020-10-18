@@ -34,8 +34,8 @@
     {% block menu %}
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-default">
-      <div class="container">
-        <a class="navbar-brand" href="#">Default Color</a>
+      <div class="container-fluid">
+        <a class="navbar-brand" href={% url 'inicio' %}>ManageActivities</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -71,21 +71,51 @@
               </div>
             </div>
           </div>
-
-          <button type="button" class="btn btn-primary">Entrar</button>
+          
         </div>
+        <h5  class="text-light">Bem-vindo(a) JohnDoe</h5>
       </div>
     </nav>
 
-    {% endblock %} {% block conteudo %}
-    <div class="container"></div>
-    {% endblock %} {% block footer %}
-    <div id="footer" class="container-fluid py-4">
-      <div class="credits">
-        Feito com 💜e ☕️ por
-        <a target="_blank" href="https://github.com/Elisariane"> Elisariane </a>
-      </div>
+    {% block breadcrumb %}
+    <div class="col-12 mt-4">
+      <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href={% url 'inicio' %}>Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Cadastro</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{ pagina }</li>
+        </ol>
+      </nav>
     </div>
+    {% endblock %}
+    {% endblock %} {% block conteudo %}
+    <div class="container-fluid"></div>
+    {% endblock %} {% block footer %}
+    <footer class="footer" style="margin-top: 40px">
+      <div class="container">
+        <hr />
+        <div class="row align-items-center justify-content-md-between m-4">
+          <div class="col-md-6">
+            <div class="copyright">
+              &copy; 2020
+              <a href="https://github.com/Elisariane" target="_blank"
+                >Elisariane</a
+              >.
+            </div>
+          </div>
+          <div class="col-md-6 align-items-center">
+            <span>Feito com 💜e ☕️ por</span>
+            <a
+              class="text-dark"
+              target="_blank"
+              href="https://github.com/Elisariane"
+            >
+              Elisariane
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     {% endblock %} {% block scriptJs %}
     <script src="{% static 'js/core/jquery.min.js' %}"></script>
     <script src="{% static 'js/core/popper.min.js' %}"></script>
