@@ -17,7 +17,7 @@
 
     <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
     <link
-      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      href="{% static  'css/font-awesome.css'%}"
       rel="stylesheet"
     />
 
@@ -34,54 +34,63 @@
     {% block menu %}
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-default">
-      <div class="container-fluid">
-        <a class="navbar-brand" href={% url 'inicio' %}>ManageActivities</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar-default"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-default">
-          <div class="navbar-collapse-header">
-            <div class="row">
-              <div class="col-6 collapse-brand">
-                <a href="/">
-                  <img src="{% static 'img/brand/white.png' %}" />
-                </a>
-              </div>
-              <div class="col-6 collapse-close">
-                <button
-                  type="button"
-                  class="navbar-toggler"
-                  data-toggle="collapse"
-                  data-target="#navbar-default"
-                  aria-controls="navbar-default"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
-          </div>
+      <a class="navbar-brand" href={% url 'home' %}>
+        ManageActivities
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
+          </li>
           
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ver
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href={% url 'listar-atividades' %}>Atividade</a>
+              <a class="dropdown-item" href={% url 'listar-blocos' %}>Bloco</a>
+              <a class="dropdown-item" href={% url 'listar-disciplinas' %}>Disciplina</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cadastrar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href={% url 'cadastrar-atividade' %}>Atividade</a>
+              <a class="dropdown-item" href={% url 'cadastrar-bloco' %}>Bloco</a>
+              <a class="dropdown-item" href={% url 'cadastrar-disciplina' %}>Disciplina</a>
+            </div>
+          </li>
+         
+        </ul>
+        <h5  class="text-light m-2">Bem-vindo(a) JohnDoe</h5>
+
+        <div class="text-center ">
+
+         <a href="">
+          <img
+          src="https://api.adorable.io/avatars/285/abott@adorable.io.png"
+          height="65px"
+          style="border-radius: 50%"
+        />
+         </a>
         </div>
-        <h5  class="text-light">Bem-vindo(a) JohnDoe</h5>
+       
       </div>
     </nav>
+ 
 
     {% block breadcrumb %}
     <div class="col-12 mt-4">
       <nav aria-label="breadcrumb" role="navigation">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href={% url 'inicio' %}>Home</a></li>
+          <li class="breadcrumb-item"><a href={% url 'home' %}>Home</a></li>
           <li class="breadcrumb-item"><a href="#">Cadastro</a></li>
           <li class="breadcrumb-item active" aria-current="page">{ pagina }</li>
         </ol>

@@ -1,0 +1,80 @@
+{% extends 'modelo.html' %} {% load static %}
+
+{% block breadcrumb %}
+    <div class="col-12 mt-4">
+      <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href={% url 'inicio' %}>Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Listar</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Atividades</li>
+        </ol>
+      </nav>
+    </div>
+{% endblock %}
+{% block conteudo %}
+
+<div class="container-fluid">
+  <div class="col-10 center m-2">
+    <a href="{% url 'cadastrar-atividade' %}" type="button" rel="tooltip" class="btn btn-success btn-icon btn-simple" style=" color: white" data-original-title="" title="">
+      ADD <i class="ni ni-fat-add pt-1"></i>
+    </a>
+  </div>
+  <table class="table col-10 center ">
+    <thead>
+        <tr class="text-center">
+            <th class="text-center">#</th>
+            <th>Atividade</th>
+            <th>Descrição</th>
+            <th>Disciplina</th>
+            <th>Bloco</th>
+            <th>Status</th>
+            <th class="text-center">É avaliativo?</th>
+            <th>Data de entrega</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    
+    {% for atividade in object_list %}
+
+    <tbody>
+        <tr class="text-center">
+            <td >{{atividade.pk}}</td>
+            <td>{{atividade.titulo}}</td>
+            <td>{{atividade.descricao}}</td>
+            <td>{{atividade.disciplina.nome}}</td>
+            <td>{{atividade.bloco_id.titulo}}</td>
+            {% if atividade.status == 'INICIADO' %}
+            <td ><span class="badge badge-warning">Iniciado</span></td>
+            {% elif atividade.status == 'FINALIZADO' %}
+            <td ><span class="badge badge-success">Finalizado</span></td>
+            {% else %}
+            <td ><span class="badge badge-danger">Pendente</span></td>
+            {% endif %}
+            {% if atividade.isAvaliativo == 1 %}
+            <td ><span class="badge badge-success">Sim</span></td>
+            {% else %}
+            <td ><span class="badge badge-danger">Não</span></td>
+            {% endif %}
+            <td>{{atividade.dataEntrega}}</td>
+            <td class="row ">
+              <a href="{% url 'editar-atividade' atividade.pk %}" type="button" rel="tooltip" style=" color: white" class="btn btn-info btn-icon btn-sm " data-original-title="" title="">
+                <i class="fa fa-pencil pt-1 " aria-hidden="true"></i>
+              </a>
+              <a href="{% url 'excluir-atividade' atividade.pk %}" type="button" rel="tooltip" style=" color: white" class="btn btn-danger btn-icon btn-sm " data-original-title="" title="">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>                </a>
+            </td>
+        </tr>
+        
+    {% empty %}
+    <tr>
+        <td colspan="9" class="text-center">Nenhuma atividade foi cadastrada!</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+</div>
+
+{% endblock %}

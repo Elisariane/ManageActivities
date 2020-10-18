@@ -13,3 +13,7 @@ class LoginView(TemplateView):
 
 class RegisterView(TemplateView):
     template_name = "accounts/register.html"
+
+
+class HomeView(TemplateView):
+    template_name = "home.html"

@@ -1,0 +1,30 @@
+{% extends 'modelo.html' %} {% load static %} {% block conteudo %}
+
+<div class="container-fluid">
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Deletar</button>
+
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <form method="post">
+          {% csrf_token %}
+          <p class="text-center m-4">Tem certeza que deseja excluir o registro " {{ object }}" ?</p>
+          <div class="row">
+            <div class="col-6 justify-items-center">
+              <a href={% url 'inicio' %} class="btn btn-primary text-center">Voltar</a>
+            </div>
+            <div class="col-6">
+              <input type="submit" class="btn btn-danger text-center" value="Excluir">
+
+            </div>
+          </div>
+      </form>
+      
+      
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+{% endblock %}
