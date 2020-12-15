@@ -15,6 +15,13 @@ class DisciplinaCreate(LoginRequiredMixin, CreateView):
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-disciplinas')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Cadastro da Disciplina'
+        context['botao'] = 'Cadastrar'
+
+        return context
+
 
 class BlocoCreate(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
@@ -22,6 +29,12 @@ class BlocoCreate(LoginRequiredMixin, CreateView):
     fields = ['titulo', 'dataInicio', 'dataFinal']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-blocos')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Cadastro do Bloco'
+        context['botao'] = 'Cadastrar'
+        return context
 
 
 class AtividadeCreate(LoginRequiredMixin, CreateView):
@@ -32,6 +45,12 @@ class AtividadeCreate(LoginRequiredMixin, CreateView):
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-atividades')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Cadastro da Atividade'
+        context['botao'] = 'Cadastrar'
+        return context
+
 
 class DisciplinaUpdate(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
@@ -40,6 +59,12 @@ class DisciplinaUpdate(LoginRequiredMixin, UpdateView):
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-disciplinas')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Alteração de Disciplina'
+        context['botao'] = 'Alterar'
+        return context
+
 
 class BlocoUpdate(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
@@ -47,6 +72,12 @@ class BlocoUpdate(LoginRequiredMixin, UpdateView):
     fields = ['titulo', 'dataInicio', 'dataFinal']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-blocos')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Alteração de Bloco'
+        context['botao'] = 'Alterar'
+        return context
 
 
 class AtividadeUpdate(LoginRequiredMixin, UpdateView):
@@ -57,12 +88,23 @@ class AtividadeUpdate(LoginRequiredMixin, UpdateView):
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-atividades')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Alteração da Atividade'
+        context['botao'] = 'Alterar'
+        return context
+
 
 class DisciplinaDelete(LoginRequiredMixin, DeleteView):
     login_url = reverse_lazy('login')
     model = Disciplina
     template_name = 'cadastros/form-excluir.html'
     success_url = reverse_lazy('listar-disciplinas')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Disciplina'
+        return context
 
 
 class BlocoDelete(LoginRequiredMixin, DeleteView):
@@ -71,12 +113,22 @@ class BlocoDelete(LoginRequiredMixin, DeleteView):
     template_name = 'cadastros/form-excluir.html'
     success_url = reverse_lazy('listar-blocos')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Bloco'
+        return context
+
 
 class AtividadeDelete(LoginRequiredMixin, DeleteView):
     login_url = reverse_lazy('login')
     model = Atividade
     template_name = 'cadastros/form-excluir.html'
     success_url = reverse_lazy('listar-atividades')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['titulo'] = 'Atividade'
+        return context
 
 
 class DisciplinaList(LoginRequiredMixin, ListView):
