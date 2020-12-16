@@ -19,7 +19,7 @@
       ADD <i class="ni ni-fat-add pt-1"></i>
     </a>
   </div>
-  <table class="table col-10 center ">
+  <table class="table col-10 center " id="tabela-listar">
     <thead>
         <tr class="text-center">
             <th class="text-center">#</th>
@@ -34,9 +34,9 @@
         </tr>
     </thead>
     
-    {% for atividade in object_list %}
-
+    
     <tbody>
+      {% for atividade in object_list %}
         <tr class="text-center">
             <td >{{atividade.pk}}</td>
             <td>{{atividade.titulo}}</td>
@@ -77,4 +77,41 @@
 
 </div>
 
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+  
+$('#tabela-listar').DataTable({
+  responsive: true,
+  // "bSort": false,
+  "aaSorting": [],
+  "pageLength": 10,
+  "language": {
+      "decimal": "",
+      "emptyTable": "Sem dados disponíveis",
+      "info": "Mostrando de _START_ de  _TOTAL_ registos",
+      "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+      "infoFiltered": "(filtrado de _MAX_ registos no total)",
+      "infoPostFix": "",
+      "thousands": ",",
+      "lengthMenu": "Mostrar _MENU_ registos",
+      "loadingRecords": "A carregar dados...",
+      "processing": "A processar...",
+      "search": "Procurar:",
+      "zeroRecords": "Não foram encontrados resultados",
+      "paginate": {
+          "first": "Primeiro",
+          "last": "Último",
+          "next": ">",
+          "previous": "<"
+      },
+      "aria": {
+          "sortAscending": ": ordem crescente",
+          "sortDescending": ": ordem decrescente"
+      }
+  }
+});
+</script>
 {% endblock %}
