@@ -145,12 +145,15 @@
         </div>
       </div>
     </footer>
-    {% endblock %} {% block scriptJs %}
+    {% endblock %} 
     <script src="{% static 'js/core/jquery.min.js' %}"></script>
     <script src="{% static 'js/core/popper.min.js' %}"></script>
     <script src="{% static 'js/core/bootstrap.min.js' %} "></script>
 
     <script src="{% static 'js/argon-design-system.min.js' %} "></script>
+
+    {% block scripts %}
     {% endblock %}
+
   </body>
 </html>
