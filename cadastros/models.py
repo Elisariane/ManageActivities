@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Disciplina(models.Model):
     nome = models.CharField(max_length=150)
@@ -7,6 +7,7 @@ class Disciplina(models.Model):
         max_length=150, verbose_name="Nome do Professor(a)")
     emailProfessor = models.CharField(
         max_length=150, verbose_name="E-mail do Professor(a)")
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __str__(self):
         return "{}\n{} ({})".format(self.nome, self.nomeProfessor, self.emailProfessor)
@@ -16,6 +17,7 @@ class Bloco(models.Model):
     titulo = models.CharField(max_length=150, verbose_name="Título")
     dataInicio = models.DateField(verbose_name="Data de ínicio")
     dataFinal = models.DateField(verbose_name="Data final")
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __str__(self):
         return "{} (Data de ínicio {}- Data Final {})".format(self.titulo, self.dataInicio, self.dataFinal)
@@ -37,6 +39,7 @@ class Atividade(models.Model):
                                    verbose_name="Disciplina")
     bloco_id = models.ForeignKey(Bloco, on_delete=models.CASCADE,
                                  verbose_name="Bloco")
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __str__(self):
         return "{} - {}\n{}\n{}\n{}\n{} ".format(self.titulo, self.disciplina, self.descricao, self.dataEntrega, self.isAvaliativo, self.status)

@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,91 +51,55 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form role="form">
-                    <div class="form-group">
-                      <div class="input-group input-group-alternative mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"
-                            ><i class="ni ni-hat-3"></i
-                          ></span>
-                        </div>
-                        <input
-                          class="form-control"
-                          placeholder="Nome"
-                          type="text"
-                        />
-                      </div>
+                  <div class="row">
+                    <div class="col-12">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            
+                            <div class="row my-4">
+                              <div class="col-12">
+                                <div
+                                  class="custom-control custom-control-alternative custom-checkbox"
+                                >
+                                  <input
+                                    class="custom-control-input"
+                                    id="customCheckRegister"
+                                    type="checkbox"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="customCheckRegister"
+                                    ><span
+                                      >Eu me comprometo em me organizar                           
+                                    </label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-center">
+
+                              <small class="text-muted m-0">Já possui uma conta?
+                                Vem com a gente <a href={% url 'login' %} >aqui.</a></small>
+                            <hr class="divider m-2">
+                            </div>
+                            <div class="text-center row " style="justify-content: center;">
+                              <div class="col-md-6">
+                                <a type="button" href="{% url 'inicio' %}"class="btn btn-primary btn-fab btn-icon btn-round">
+                                  <i class="ni ni-back-40"></i> Voltar
+                                </a>
+                                
+                                <button type="submit" class="btn btn-success ">
+                                  Criar conta
+                                </button>
+                              </div>
+                              
+                            </div>
+                            
+                        </form>
                     </div>
-                    <div class="form-group">
-                      <div class="input-group input-group-alternative mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"
-                            ><i class="ni ni-email-83"></i
-                          ></span>
-                        </div>
-                        <input
-                          class="form-control"
-                          placeholder="E-mail"
-                          type="email"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group focused">
-                      <div class="input-group input-group-alternative">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"
-                            ><i class="ni ni-lock-circle-open"></i
-                          ></span>
-                        </div>
-                        <input
-                          class="form-control"
-                          placeholder="Senha"
-                          type="password"
-                        />
-                      </div>
-                    </div>
-                    <div class="text-muted font-italic">
-                      <small
-                        >Força da senha:
-                        <span class="text-success font-weight-700"
-                          >forte</span
-                        ></small
-                      >
-                    </div>
-                    <div class="row my-4">
-                      <div class="col-12">
-                        <div
-                          class="custom-control custom-control-alternative custom-checkbox"
-                        >
-                          <input
-                            class="custom-control-input"
-                            id="customCheckRegister"
-                            type="checkbox"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="customCheckRegister"
-                            ><span
-                              >Eu me comprometo em me organizar                           
-                            </label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="text-center row">
-                      <div class="col-md-6">
-                        <a type="button" href="{% url 'inicio' %}"class="btn btn-primary btn-fab btn-icon btn-round">
-                          <i class="ni ni-back-40"></i> Voltar
-                        </a>
-                        
-                        <button type="button" class="btn btn-success ">
-                          Criar conta
-                        </button>
-                      </div>
-                      
-                    </div>
-                  </form>
                 </div>
+
               </div>
             </div>
             
